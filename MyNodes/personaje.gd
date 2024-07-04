@@ -1,6 +1,7 @@
 extends Node2D
 
 const SPEED = 10.0
+var vida = 3;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,8 +29,15 @@ func _process(delta):
 		else:
 			anim_pj(1)
 
+
+
 func anim_pj(frame):
 	#animando personaje
 	$Idle.frame = frame
-	pass
+
+func perder_vida():
+	vida = vida - 1
+	if vida > 0:
+		#perdio
+		print(vida)
 
