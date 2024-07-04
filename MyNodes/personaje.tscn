@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7nw36fdi5687"]
+
+[ext_resource type="Texture2D" uid="uid://saemasynjkig" path="res://Assets/Images/Idle.png" id="1_kkdrs"]
+[ext_resource type="Script" path="res://MyNodes/personaje.gd" id="1_m2jam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80chg"]
+size = Vector2(15, 15)
+
+[node name="Personaje" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_m2jam")
+
+[node name="Idle" type="Sprite2D" parent="."]
+texture = ExtResource("1_kkdrs")
+hframes = 4
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_80chg")
