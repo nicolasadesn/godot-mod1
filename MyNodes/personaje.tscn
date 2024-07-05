@@ -3,19 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://saemasynjkig" path="res://Assets/Images/Idle.png" id="1_kkdrs"]
 [ext_resource type="Script" path="res://MyNodes/personaje.gd" id="1_m2jam"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_80chg"]
-size = Vector2(15, 15)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qxh2"]
 
-[node name="Personaje" type="Node2D"]
+[node name="Personaje" type="CharacterBody2D"]
 scale = Vector2(5, 5)
+platform_wall_layers = 1
+safe_margin = 0.415
 script = ExtResource("1_m2jam")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1qxh2")
+debug_color = Color(0, 0.6, 0.701961, 1)
 
 [node name="Idle" type="Sprite2D" parent="."]
 texture = ExtResource("1_kkdrs")
 hframes = 4
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_80chg")

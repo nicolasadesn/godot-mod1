@@ -16,8 +16,7 @@ func _process(delta):
 	#position = lerp(position, personaje.position, SPEED*delta)
 	#print((position - personaje.position).normalized())
 	position += direction * SPEED * delta
-	print(position)
-	pass
+
 	
 	
 

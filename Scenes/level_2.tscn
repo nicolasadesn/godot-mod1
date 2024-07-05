@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgj32iteqt4ej"]
+
+[ext_resource type="PackedScene" uid="uid://b7nw36fdi5687" path="res://MyNodes/personaje.tscn" id="1_t5og7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ground" type="TileMap" parent="."]
+format = 2
+
+[node name="Personaje" parent="." instance=ExtResource("1_t5og7")]
+position = Vector2(138, 110)

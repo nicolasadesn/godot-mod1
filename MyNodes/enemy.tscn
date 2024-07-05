@@ -16,6 +16,7 @@ hframes = 4
 vframes = 4
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+platform_wall_layers = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 0.6)

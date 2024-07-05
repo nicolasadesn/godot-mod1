@@ -1,6 +1,6 @@
-extends Node2D
+extends CharacterBody2D
 
-const SPEED = 10.0
+const SPEED = 300
 var vida = 3;
 
 # Called when the node enters the scene tree for the first time.
@@ -14,8 +14,7 @@ func _process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionX = Input.get_axis("ui_left", "ui_right")
 	if directionX:
-		position.x += directionX * SPEED
-		anim_pj(directionX)
+		position.x += directionX * SPEED * delta
 		if directionX > 0:
 			anim_pj(3)
 		else:
@@ -23,7 +22,7 @@ func _process(delta):
 	
 	var directionY = Input.get_axis("ui_up", "ui_down")
 	if directionY:
-		position.y += directionY * SPEED
+		position.y += directionY * SPEED * delta
 		if directionY > 0:
 			anim_pj(0)
 		else:
@@ -31,9 +30,10 @@ func _process(delta):
 
 
 
-func anim_pj(frame):
+func anim_pj(myframe):
 	#animando personaje
-	$Idle.frame = frame
+	print(myframe)
+	$Idle.frame = myframe
 
 func perder_vida():
 	vida = vida - 1
